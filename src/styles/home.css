@@ -1,0 +1,20 @@
+#section3-card li {
+  opacity: 0;
+  animation: dropIn 8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 400ms);
+}
+
+@keyframes dropIn {
+  20% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  30%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -154,7 +154,6 @@ export default function Section5() {
                               value={values.message}
                               className="shadow-sm p-1 focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-2 border-gray-300 border-solid rounded-md"
                               placeholder="e.g. Can you make me an account?"
-                              defaultValue={""}
                             />
                             <p className="block text-base font-medium text-red-500">
                               {touched.message && errors.message

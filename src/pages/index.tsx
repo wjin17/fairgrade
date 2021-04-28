@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,6 +8,8 @@ import Section2 from "../components/landing/section2"
 import Section3 from "../components/landing/section3"
 import Section4 from "../components/landing/section4"
 import Section5 from "../components/landing/section5"
+
+import "../styles/home.css"
 
 const seoDescription =
   "Harness the power of collective intelligence to distribute fair and accurate grades in a way that teaches students to successfully evaluate feedback"
