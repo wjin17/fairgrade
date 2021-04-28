@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/fairgrade",
   siteMetadata: {
     title: `Fairgrade`,
     description: `Harness the power of collective intelligence to distribute fair and
