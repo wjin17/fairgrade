@@ -1,7 +1,7 @@
-#section3-card li {
+.section3-card li {
   opacity: 0;
   animation: dropIn 8s;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-delay: calc(var(--order) * 400ms);
 }

@@ -2,22 +2,23 @@ import * as React from "react"
 
 export default function Section3() {
   const leadsToRef = React.useRef(null)
+  const [rightAnimation, setRightAnimation] = React.useState("invisible")
   React.useLayoutEffect(() => {
     const topPosition = leadsToRef.current.getBoundingClientRect().top
     const onScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2
+      const scrollPosition = window.scrollY + window.innerHeight
       if (topPosition < scrollPosition) {
         // trigger animation
-        console.log("should trigger animation")
+        setRightAnimation("section3-card")
       }
     }
 
     window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
     /* 
-           remove the event listener in the cleanup function 
-           to prevent memory leaks
-        */
+        remove the event listener in the cleanup function 
+        to prevent memory leaks
+    */
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
   return (
     <section
@@ -62,24 +63,24 @@ export default function Section3() {
           <h1 className="m-3 text-4xl text-green-800 font-extrabold sm:mt-5 sm:text-5xl sm:max-w-xl sm:mx-auto md:mt-5 md:text-6xl">
             Leads to
           </h1>
-          <ul id="section3-card" className="text-left max-w-sm mx-auto mb-5">
-            <li style={{ "--order": 1 } as React.CSSProperties}>
+          <ul className={`text-left max-w-sm mx-auto mb-5 ${rightAnimation}`}>
+            <li style={{ "--order": 0 } as React.CSSProperties}>
               <p className="mt-3 text-2xl text-green-800 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Students increasing their understanding of the material through
                 accessing others
               </p>
             </li>
-            <li style={{ "--order": 2 } as React.CSSProperties}>
+            <li style={{ "--order": 1 } as React.CSSProperties}>
               <p className="mt-3 text-2xl text-green-800 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Students receiving more and faster feedback
               </p>
             </li>
-            <li style={{ "--order": 3 } as React.CSSProperties}>
+            <li style={{ "--order": 2 } as React.CSSProperties}>
               <p className="mt-3 text-2xl text-green-800 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Students receiving more accurate grading
               </p>
             </li>
-            <li style={{ "--order": 4 } as React.CSSProperties}>
+            <li style={{ "--order": 3 } as React.CSSProperties}>
               <p className="mt-3 text-2xl text-green-800 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Professors wasting less time and resources on grading
               </p>
